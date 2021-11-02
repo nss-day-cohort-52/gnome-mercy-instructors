@@ -44,7 +44,8 @@ export const completeTheRequest = () => {
             )
 
             Promise.all(promiseArray)
-                .then(fetchCompletions)
+                .then(() => fetchCompletions())
+                .then(() => fetchRequests())
                 .then(() => document.dispatchEvent(new CustomEvent("stateChanged")))
         })
 }
