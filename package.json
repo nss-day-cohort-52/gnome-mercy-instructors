@@ -1,0 +1,12 @@
+{
+    "name": "gnome-mercy",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "json-server": "^0.12.1"
+    },
+    "scripts": {
+        "start": "npm run json-serve",
+        "json-serve": "node server.js"
+    }
+}
