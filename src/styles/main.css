@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+.siteNav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.siteNav > h1 {
+	margin-block-start: 0.5rem;
+	font-size: 1.5rem;
+}
+
+
+.request__fieldset {
+	display: flex;
+	flex-direction: column;
+}
+
+.request__fieldset > label {
+	margin: 1rem 0 0 0;
+}
+
+.craftingTable {
+	display: flex;
+	flex-direction: row;
+}
+
+.ingredientPicker {
+	flex: 4;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.craftList {
+	flex: 1;
+}
+
