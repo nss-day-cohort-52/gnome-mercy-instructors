@@ -26,24 +26,37 @@ export const GnomeMercy = () => {
             </section>
 
 
-            <h2>Crafting Table</h2>
-            <section class="craftingTable">
-                <div class="ingredientPicker">
-                    ${IngredientPicker()}
+            <section class="workspace">
+
+                <div class="craftingArea">
+                    <h2>Crafting Table</h2>
+                    <div class="craftingTable">
+                        <div class="ingredientPicker">
+                            ${IngredientPicker()}
+                        </div>
+                        <div class="craftList">
+                            <div>${CrafterList()}</div>
+                            <div>${CraftList()}</div>
+                            <div>
+                                <button id="completeOrderButton">Complete Order</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="craftList">
-                    <div>${CrafterList()}</div>
-                    <div>${CraftList()}</div>
-                    <div>
-                        <button id="completeOrderButton">Complete Order</button>
+
+                <div class="shipping">
+                    <h2>Completed Requests</h2>
+                    <div class="completions">
+                        <section>
+                            ${Completions()}
+                        </section>
                     </div>
                 </div>
             </section>
 
-            <h2>Completed Requests</h2>
-            <section class="completions">
-                ${Completions()}
-            </section>
+
+
         </article>
     `
 }

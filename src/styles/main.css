@@ -39,13 +39,27 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 1rem 0 0 0;
 }
 
+.workspace {
+	display: flex;
+	flex-direction: row;
+}
+
+.craftingArea {
+	flex: 5;
+}
+
+.shipping {
+	flex: 2;
+	margin-left: 5rem;
+}
+
 .craftingTable {
 	display: flex;
 	flex-direction: row;
 }
 
 .ingredientPicker {
-	flex: 4;
+	flex: 3;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -55,3 +69,8 @@ h1,h2,h3,h4,h5,h6 {
 	flex: 1;
 }
 
+.completion {
+	border: 1px dotted darkgoldenrod;
+	padding: 1rem;
+	margin: 1rem 0;
+}

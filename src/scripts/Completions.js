@@ -11,7 +11,7 @@ export const Completions = () => {
                 const request = requests.find(req => req.id === c.craftRequestId)
                 const witch = crafters.find(crafter => crafter.id === c.crafterId)
 
-                return `<div>${request.name} was created by ${witch.name}</div>`
+                return `<div class="completion">${request.name} was created by ${witch.name}</div>`
             }).join("")
         }
         `

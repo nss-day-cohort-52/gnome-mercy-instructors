@@ -40,6 +40,12 @@
       "intendedUse": "See, there's this girl....",
       "craftTypeId": 2,
       "id": 4
+    },
+    {
+      "name": "Redemption",
+      "intendedUse": "I need a potion to make up for the huge mistake I made.",
+      "craftTypeId": 1,
+      "id": 5
     }
   ],
   "craftTypes": [
@@ -72,6 +78,11 @@
       "crafterId": 2,
       "craftRequestId": 4,
       "id": 4
+    },
+    {
+      "crafterId": 3,
+      "craftRequestId": 5,
+      "id": 5
     }
   ],
   "ingredients": [
@@ -236,6 +247,26 @@
       "ingredientId": 1,
       "completionId": 4,
       "id": 20
+    },
+    {
+      "ingredientId": 6,
+      "completionId": 5,
+      "id": 21
+    },
+    {
+      "ingredientId": 7,
+      "completionId": 5,
+      "id": 22
+    },
+    {
+      "ingredientId": 8,
+      "completionId": 5,
+      "id": 23
+    },
+    {
+      "ingredientId": 9,
+      "completionId": 5,
+      "id": 24
     }
   ]
 }
