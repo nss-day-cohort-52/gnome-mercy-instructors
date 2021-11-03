@@ -21,10 +21,10 @@ export const GnomeMercy = () => {
                 <img src="/images/gnome.png" style="margin-right: 3rem" width="50px" height="50px" alt="Nigel the Gnome" />
                 <h1>Gnome Mercy Magical Crafting</h1>
             </nav>
+
             <section class="requestForm">
                 ${RequestForm()}
             </section>
-
 
             <section class="workspace">
 
@@ -42,7 +42,6 @@ export const GnomeMercy = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="shipping">
@@ -54,8 +53,6 @@ export const GnomeMercy = () => {
                     </div>
                 </div>
             </section>
-
-
 
         </article>
     `

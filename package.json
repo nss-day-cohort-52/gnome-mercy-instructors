@@ -1,12 +1,25 @@
 {
     "name": "gnome-mercy",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": true,
     "dependencies": {
         "json-server": "^0.12.1"
     },
+    "nodemonConfig": {
+        "ignore": [
+            "./src/scripts/bundle.js",
+            "./dist"
+        ],
+        "delay": 2500
+    },
     "scripts": {
-        "start": "npm run json-serve",
-        "json-serve": "node server.js"
+        "dev": "nodemon --exec 'npm run compile'",
+        "compile": "npm run obfuscate && npm run rollup && npm start",
+        "obfuscate": "javascript-obfuscator ./src/scripts --output ./dist/scripts --disable-console-output true --rename-globals true --simplify true --transform-object-keys true --compact true",
+        "rollup": "rollup ./dist/scripts/main.js --file ./src/scripts/bundle.js --format iife && rm -rf ./dist",
+        "start": "node server.js"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.14"
     }
 }

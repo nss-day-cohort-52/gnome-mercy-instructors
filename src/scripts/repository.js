@@ -62,7 +62,6 @@ export const setUserChoice = (key, value) => {
             ? ingredientsSet.delete(value)
             : ingredientsSet.add(value)
     }
-    console.log(applicationState.userChoices)
 }
 
 

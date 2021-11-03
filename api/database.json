@@ -34,18 +34,6 @@
       "intendedUse": "My sister needs to chop down 16 trees",
       "craftTypeId": 1,
       "id": 3
-    },
-    {
-      "name": "Love Exlixir",
-      "intendedUse": "See, there's this girl....",
-      "craftTypeId": 2,
-      "id": 4
-    },
-    {
-      "name": "Redemption",
-      "intendedUse": "I need a potion to make up for the huge mistake I made.",
-      "craftTypeId": 1,
-      "id": 5
     }
   ],
   "craftTypes": [
@@ -73,16 +61,6 @@
       "crafterId": 3,
       "craftRequestId": 3,
       "id": 3
-    },
-    {
-      "crafterId": 2,
-      "craftRequestId": 4,
-      "id": 4
-    },
-    {
-      "crafterId": 3,
-      "craftRequestId": 5,
-      "id": 5
     }
   ],
   "ingredients": [
@@ -212,61 +190,6 @@
       "ingredientId": 13,
       "completionId": 3,
       "id": 13
-    },
-    {
-      "ingredientId": 3,
-      "completionId": 4,
-      "id": 14
-    },
-    {
-      "ingredientId": 11,
-      "completionId": 4,
-      "id": 15
-    },
-    {
-      "ingredientId": 12,
-      "completionId": 4,
-      "id": 16
-    },
-    {
-      "ingredientId": 8,
-      "completionId": 4,
-      "id": 17
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 4,
-      "id": 18
-    },
-    {
-      "ingredientId": 2,
-      "completionId": 4,
-      "id": 19
-    },
-    {
-      "ingredientId": 1,
-      "completionId": 4,
-      "id": 20
-    },
-    {
-      "ingredientId": 6,
-      "completionId": 5,
-      "id": 21
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 5,
-      "id": 22
-    },
-    {
-      "ingredientId": 8,
-      "completionId": 5,
-      "id": 23
-    },
-    {
-      "ingredientId": 9,
-      "completionId": 5,
-      "id": 24
     }
   ]
 }
