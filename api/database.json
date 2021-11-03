@@ -16,26 +16,6 @@
       "bio": "She's ambitious, hardy and keen. But there's more than meets the eye, not surprising for somebody with her ugly past. She was born and grew up in a lower class family in a broken capital. She killed somebody by accident during a natural disaster and was forsaken by all. With the help of a small group of strangers she had to survive in a bleak world. But with her charm and talents, she managed to start a new life and conquer all fears and doubts."
     }
   ],
-  "craftRequests": [
-    {
-      "name": "Potion of immortality",
-      "intendedUse": "For my mum",
-      "craftTypeId": 1,
-      "id": 1
-    },
-    {
-      "name": "Elixir of Pneumonia",
-      "intendedUse": "My evil step mom hates me",
-      "craftTypeId": 2,
-      "id": 2
-    },
-    {
-      "name": "Potion of Strength",
-      "intendedUse": "My sister needs to chop down 16 trees",
-      "craftTypeId": 1,
-      "id": 3
-    }
-  ],
   "craftTypes": [
     {
       "id": 1,
@@ -44,23 +24,6 @@
     {
       "id": 2,
       "type": "Elixir"
-    }
-  ],
-  "completions": [
-    {
-      "crafterId": 2,
-      "craftRequestId": 1,
-      "id": 1
-    },
-    {
-      "crafterId": 1,
-      "craftRequestId": 2,
-      "id": 2
-    },
-    {
-      "crafterId": 3,
-      "craftRequestId": 3,
-      "id": 3
     }
   ],
   "ingredients": [
@@ -123,73 +86,6 @@
     {
       "id": 15,
       "name": "Asian Pear"
-    }
-  ],
-  "craftIngredients": [
-    {
-      "ingredientId": 4,
-      "completionId": 1,
-      "id": 1
-    },
-    {
-      "ingredientId": 1,
-      "completionId": 1,
-      "id": 2
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 1,
-      "id": 3
-    },
-    {
-      "ingredientId": 10,
-      "completionId": 1,
-      "id": 4
-    },
-    {
-      "ingredientId": 2,
-      "completionId": 2,
-      "id": 5
-    },
-    {
-      "ingredientId": 5,
-      "completionId": 2,
-      "id": 6
-    },
-    {
-      "ingredientId": 10,
-      "completionId": 2,
-      "id": 7
-    },
-    {
-      "ingredientId": 12,
-      "completionId": 2,
-      "id": 8
-    },
-    {
-      "ingredientId": 15,
-      "completionId": 2,
-      "id": 9
-    },
-    {
-      "ingredientId": 2,
-      "completionId": 3,
-      "id": 10
-    },
-    {
-      "ingredientId": 3,
-      "completionId": 3,
-      "id": 11
-    },
-    {
-      "ingredientId": 15,
-      "completionId": 3,
-      "id": 12
-    },
-    {
-      "ingredientId": 13,
-      "completionId": 3,
-      "id": 13
     }
   ]
 }
