@@ -1,4 +1,4 @@
-const API = "https://gnome-mercy-sgoww.ondigitalocean.app/api"
+const API = "http://localhost:8088/api"
 
 const applicationState = {
     types: [],
