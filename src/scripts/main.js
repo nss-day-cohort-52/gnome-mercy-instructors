@@ -1,11 +1,22 @@
-import { fetchTypes } from "./dataAccess.js";
+import { fetchTypes, fetchRequests } from "./dataAccess.js";
 import { GnomeMercy } from "./GnomeMercy.js";
 
 const mainContainer = document.querySelector("#container")
 
 const render = () => {
-    fetchTypes()
-        .then(() => { mainContainer.innerHTML = GnomeMercy() })
+    fetchRequests()
+        .then(() => fetchTypes())
+        .then(() => {
+            mainContainer.innerHTML = GnomeMercy()
+        })
 }
 
 render()
+
+document.addEventListener(
+    "stateHasChanged",
+    () => {
+        render()
+    }
+    )
+

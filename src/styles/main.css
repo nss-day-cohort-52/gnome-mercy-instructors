@@ -74,3 +74,36 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 1rem;
 	margin: 1rem 0;
 }
+
+.flex {
+	display: flex;
+}
+.row {
+	flex-flow: row nowrap
+}
+.column {
+	flex-flow: column nowrap
+}
+.section {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+.dropdown {
+	width: 95%;
+}
+.label {
+	font-size: small
+}
+
+input,
+select,
+button {
+	margin-bottom: .5rem;
+	padding: .5rem;
+}
+
+button {
+	margin-top: .5rem;
+	cursor: pointer;
+}
