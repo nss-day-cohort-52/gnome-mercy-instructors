@@ -1,6 +1,16 @@
 // Module Responsibility - Generate HTML for the dropdown of craftRequests
 
-import { GetCraftRequests } from "./dataAccess.js"
+import { GetCraftRequests, setRequestId } from "./dataAccess.js"
+
+document.addEventListener(
+  "change",
+  (evt) => {
+      if (evt.target.id === "requestDropdown") {
+        setRequestId(parseInt(evt.target.value))
+      }
+  }
+)
+
 
 export const CraftRequestDropdown = () => {
 

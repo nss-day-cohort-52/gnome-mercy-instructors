@@ -124,6 +124,19 @@
       "intendedUse": "Causes the ugly",
       "craftTypeId": 1,
       "id": 6
+    },
+    {
+      "name": "Elixir of Life",
+      "intendedUse": "My grandma needs a few extra years",
+      "craftTypeId": 2,
+      "id": 7
+    }
+  ],
+  "completions": [
+    {
+      "crafterId": 1,
+      "craftRequestId": 2,
+      "id": 1
     }
   ]
 }
