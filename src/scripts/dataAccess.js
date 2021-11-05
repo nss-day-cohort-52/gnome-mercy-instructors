@@ -1,4 +1,11 @@
+/*
+    Responsbility:
 
+        Manage application state and provide functions to change permanent
+        state with fetch() call to the API.
+*/
+
+const API = "http://localhost:8088"
 
 const applicationState = {
     craftTypes: [],
@@ -7,12 +14,52 @@ const applicationState = {
     ingredients: [],
     userChoices: {
         crafterId: 0,
-        ingredients: new Set(),
+        chosenIngredients: new Set(),
         requestId: 0
     }
 }
 
-const API = "http://localhost:8088"
+const createCraftIngredients = (completion) => {
+    const fetchArray = []
+
+    applicationState.userChoices.chosenIngredients.forEach(
+        (chosenIngredientId) => {
+            fetchArray.push(
+                fetch(`${API}/craftIngredients`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        ingredientId: chosenIngredientId,
+                        completionId: completion.id
+                    })
+                })
+                    .then(response => response.json())
+                    .then(() => {
+                        console.log("Fetch call done")
+                    })
+            )
+        }
+    )
+
+    // This is where all the fetches (Promises) all run and resolve
+    Promise.all(fetchArray)
+        .then(
+            () => {
+                console.log("All fetches complete")
+                applicationState.userChoices.chosenIngredients.clear()
+            }
+        )
+}
+
+export const setIngredients = (id) => {
+    // Does the set contain the id?
+    // Ternary statement
+    applicationState.userChoices.chosenIngredients.has(id)
+        ? applicationState.userChoices.chosenIngredients.delete(id)  // Yes? Remove it
+        : applicationState.userChoices.chosenIngredients.add(id)     // No? Add it
+}
 
 export const setCrafterId = (id) => {
     applicationState.userChoices.crafterId = id
@@ -23,7 +70,6 @@ export const setRequestId = (id) => {
 }
 
 export const fetchTypes = () => {
-
     return fetch(`${API}/craftTypes`)
         .then(response => response.json())
         .then((craftTypes) => {
@@ -50,7 +96,7 @@ export const fetchIngredients = () => {
 export const fetchRequests = () => {
     return fetch(`${API}/craftRequests`)
         .then(response => response.json())
-        .then( ( craftRequests) => {
+        .then((craftRequests) => {
             applicationState.craftRequests = craftRequests
         })
 }
@@ -67,13 +113,19 @@ export const sendCompletion = () => {
         })
     }
 
-    return fetch( `${ API }/completions`, fetchOptions )
+    return fetch(`${API}/completions`, fetchOptions)
         .then(response => response.json())
-        .then(() => {
-            document.dispatchEvent( new CustomEvent("stateHasChanged") )
-        })
-}
+        .then(
 
+
+            (newCompletionObject) => {
+                createCraftIngredients(newCompletionObject)
+                document.dispatchEvent(new CustomEvent("stateHasChanged"))
+            }
+
+
+        )
+}
 
 export const sendRequest = (craftRequest) => {
     const fetchOptions = {
@@ -81,27 +133,29 @@ export const sendRequest = (craftRequest) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify( craftRequest )
+        body: JSON.stringify(craftRequest)
     }
 
-    return fetch( `${ API }/craftRequests`, fetchOptions )
+    return fetch(`${API}/craftRequests`, fetchOptions)
         .then(response => response.json())
         .then(() => {
             console.log("State Changed Event Dispatched")
-            document.dispatchEvent( new CustomEvent("stateHasChanged") )
+            document.dispatchEvent(new CustomEvent("stateHasChanged"))
         })
 }
-
 
 export const getCrafters = () => {
     return applicationState.crafters.map(crafter => ({ ...crafter }))
 }
+
 export const getIngredients = () => {
     return applicationState.ingredients.map(ingredient => ({ ...ingredient }))
 }
+
 export const GetTypes = () => {
     return applicationState.craftTypes.map(craftType => ({ ...craftType }))
 }
+
 export const GetCraftRequests = () => {
     return applicationState.craftRequests.map(craftRequest => ({ ...craftRequest }))
 }

@@ -1,6 +1,17 @@
 // Module Responsibility - Generate HTML for checkboxes for each ingredient
 
-import { getIngredients } from "./dataAccess.js"
+import { getIngredients, setIngredients } from "./dataAccess.js"
+
+document.addEventListener(
+    "click",
+    evt => {
+        if (evt.target.type === "checkbox") {
+            const ingredientId = +evt.target.value
+
+            setIngredients(ingredientId)
+        }
+    }
+)
 
 
 export const Ingredients = () => {
