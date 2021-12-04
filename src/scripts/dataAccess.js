@@ -5,7 +5,7 @@
         state with fetch() call to the API.
 */
 
-const API = "http://localhost:8088"
+const API = "http://localhost:8088/api"
 
 const applicationState = {
     craftTypes: [],
