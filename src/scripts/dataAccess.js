@@ -12,6 +12,7 @@ const applicationState = {
     craftRequests: [],
     crafters: [],
     ingredients: [],
+    completions: [],
     userChoices: {
         crafterId: 0,
         chosenIngredients: new Set(),
@@ -101,6 +102,14 @@ export const fetchRequests = () => {
         })
 }
 
+export const fetchCompletions = () => {
+    return fetch(`${API}/completions`)
+        .then(response => response.json())
+        .then((completions) => {
+            applicationState.completions = completions
+        })
+}
+
 export const sendCompletion = () => {
     const fetchOptions = {
         method: "POST",
@@ -152,10 +161,14 @@ export const getIngredients = () => {
     return applicationState.ingredients.map(ingredient => ({ ...ingredient }))
 }
 
-export const GetTypes = () => {
+export const getCompletions = () => {
+    return applicationState.completions.map(completion => ({ ...completion }))
+}
+
+export const getTypes = () => {
     return applicationState.craftTypes.map(craftType => ({ ...craftType }))
 }
 
-export const GetCraftRequests = () => {
+export const getCraftRequests = () => {
     return applicationState.craftRequests.map(craftRequest => ({ ...craftRequest }))
 }

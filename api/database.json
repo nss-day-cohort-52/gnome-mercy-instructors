@@ -130,6 +130,12 @@
       "intendedUse": "My grandma needs a few extra years",
       "craftTypeId": 2,
       "id": 7
+    },
+    {
+      "name": "Liquid Luck",
+      "intendedUse": "To increase success at games of chance",
+      "craftTypeId": 1,
+      "id": 8
     }
   ],
   "completions": [
@@ -162,6 +168,11 @@
       "crafterId": 1,
       "craftRequestId": 1,
       "id": 6
+    },
+    {
+      "crafterId": 2,
+      "craftRequestId": 8,
+      "id": 7
     }
   ],
   "craftIngredients": [
@@ -264,6 +275,26 @@
       "ingredientId": 7,
       "completionId": 6,
       "id": 20
+    },
+    {
+      "ingredientId": 8,
+      "completionId": 7,
+      "id": 21
+    },
+    {
+      "ingredientId": 15,
+      "completionId": 7,
+      "id": 22
+    },
+    {
+      "ingredientId": 11,
+      "completionId": 7,
+      "id": 23
+    },
+    {
+      "ingredientId": 13,
+      "completionId": 7,
+      "id": 24
     }
   ]
 }

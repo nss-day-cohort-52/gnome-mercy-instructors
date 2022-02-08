@@ -1,6 +1,6 @@
 // Module Responsibility - Generate HTML for the dropdown of craftRequests
 
-import { GetCraftRequests, setRequestId } from "./dataAccess.js"
+import { getCompletions, getCraftRequests, setRequestId } from "./dataAccess.js"
 
 document.addEventListener(
   "change",
@@ -14,7 +14,8 @@ document.addEventListener(
 
 export const CraftRequestDropdown = () => {
 
-  const craftRequests = GetCraftRequests()
+  const craftRequests = getCraftRequests()
+  const completions = getCompletions()
 
   return `
   <h3>Craft Requests</h3>
@@ -23,11 +24,10 @@ export const CraftRequestDropdown = () => {
     ${
       craftRequests.map(
         (craftRequestObj) => {
-          return `
-            <option value="${craftRequestObj.id}">${craftRequestObj.name}</option>
-          `
+          const completed = completions.find(c => c.craftRequestId === craftRequestObj.id)
+          return completed ? "" : `<option value="${craftRequestObj.id}">${craftRequestObj.name}</option>`
         }
-      )
+      ).join("")
     }
   </select>
   `

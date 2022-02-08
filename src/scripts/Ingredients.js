@@ -20,15 +20,17 @@ export const Ingredients = () => {
 
     return `
         <h3>Crafting Ingredients</h3>
-        ${
-            ingredients.map(
-            (ingredient) => {
-                return `
-                    <div>
-                        <input type="checkbox" value="${ingredient.id}" />${ingredient.name}
-                    </div>
-                `
-            }).join("")
-        }
+        <div class="flex column--wrap ingredientsList">
+            ${
+                ingredients.map(
+                (ingredient) => {
+                    return `
+                        <div>
+                            <input type="checkbox" value="${ingredient.id}" />${ingredient.name}
+                        </div>
+                    `
+                }).join("")
+            }
+        </div>
     `
 }
